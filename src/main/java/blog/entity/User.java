@@ -43,14 +43,6 @@ public class User implements Serializable {
 	@OneToMany(mappedBy="author",targetEntity=Article.class,fetch=FetchType.LAZY,cascade=CascadeType.REMOVE)
 	private List<Article> articles;//用户写过的全部文章
 	
-	@ManyToMany
-	@JoinTable(name="Likes",joinColumns=@JoinColumn(name="user_uid"),inverseJoinColumns=@JoinColumn(name="article_aid"))
-	private Set<Article> liked;//用户点过赞的文章
-	
-	@ManyToMany
-	@JoinTable(name="Collects",joinColumns=@JoinColumn(name="user_uid"),inverseJoinColumns=@JoinColumn(name="article_aid"))
-	private Set<Article> collected;//用户收藏过的文章
-	
 	@ManyToMany(mappedBy="idols")
 	@JsonIgnore
 	private Set<User> fans;//关注此用户的用户
@@ -64,6 +56,14 @@ public class User implements Serializable {
 	
 	@OneToMany(mappedBy="owner",targetEntity=Resource.class,fetch=FetchType.LAZY,cascade=CascadeType.REMOVE)
 	private Set<Resource> uploadedResources;
+
+	//用户点过的赞
+	@OneToMany(mappedBy = "liker", targetEntity = Like.class,cascade = CascadeType.REMOVE)
+	private List<Like> myLike;
+
+	//用户收藏记录
+	@OneToMany(mappedBy = "collector", targetEntity = Collection.class, cascade = CascadeType.REMOVE)
+	private List<Collection> myCollection;
 	
 	public User() {
 		super();
@@ -113,19 +113,6 @@ public class User implements Serializable {
 	public void setArticles(List<Article> articles) {
 		this.articles = articles;
 	}
-	
-	public Set<Article> getLiked() {
-		return liked;
-	}
-	public void setLiked(Set<Article> liked) {
-		this.liked = liked;
-	}
-	public Set<Article> getCollected() {
-		return collected;
-	}
-	public void setCollected(Set<Article> collected) {
-		this.collected = collected;
-	}
 	public Set<User> getFans() {
 		return fans;
 	}
@@ -170,7 +157,23 @@ public class User implements Serializable {
 	public void setUploadedResources(Set<Resource> uploadedResources) {
 		this.uploadedResources = uploadedResources;
 	}
-	
+
+	public List<Like> getMyLike() {
+		return myLike;
+	}
+
+	public void setMyLike(List<Like> myLike) {
+		this.myLike = myLike;
+	}
+
+	public List<Collection> getMyCollection() {
+		return myCollection;
+	}
+
+	public void setMyCollection(List<Collection> myCollection) {
+		this.myCollection = myCollection;
+	}
+
 	@Override
 	public String toString() {
 		String result="";

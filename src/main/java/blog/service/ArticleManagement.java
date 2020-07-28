@@ -9,15 +9,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import blog.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import blog.dao.ArticleRepository;
 import blog.dao.TagRepository;
-import blog.entity.Article;
-import blog.entity.Partition;
-import blog.entity.Tag;
-import blog.entity.User;
 import blog.service_frame.ArticleService;
 
 @Service
@@ -131,8 +128,8 @@ public class ArticleManagement implements ArticleService {
 	@Override
 	public void updateArticle(Article a) {
 		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                Date date = new Date(System.currentTimeMillis());
-                String cur_date = formatter.format(date);
+		Date date = new Date(System.currentTimeMillis());
+		String cur_date = formatter.format(date);
 		a.setDatetime(cur_date);
 		this.repo.saveAndFlush(a);
 	}
@@ -149,7 +146,7 @@ public class ArticleManagement implements ArticleService {
 		ArrayList<Integer> NumReads = new ArrayList<>();
 		for(Article a:articles) {
 			User u = a.getAuthor();
-			Likes.add(a.getLiker().size());
+			Likes.add(a.getLikes().size());
 			AIDs.add(a.getAid());
 			Titles.add(a.getTitle());
 			Times.add(a.getDatetime());
@@ -179,9 +176,11 @@ public class ArticleManagement implements ArticleService {
 	@Override
 	public List<Article> getCollectedArticlesByUID(int uid) {
 		User u = this.user_management.getUser(uid);
-		Set<Article> collected = u.getCollected();
+		List<Collection> collect_record = u.getMyCollection();
 		List<Article> collected_articles = new ArrayList<>();
-		collected_articles.addAll(collected);
+		for(Collection r:collect_record){
+			collected_articles.add(r.getTarget());
+		}
 		return collected_articles;
 	}
 }

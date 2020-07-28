@@ -1,9 +1,7 @@
-INFO 2020-07-27 21:19:56,824 blog.BlogApplicationTests. logStarting 55 :Starting BlogApplicationTests on DHZ-ThinkPad-X1-Extreme with PID 19644 (started by Dench in C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog) 
-DEBUG 2020-07-27 21:19:56,831 blog.BlogApplicationTests. logStarting 56 :Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
-INFO 2020-07-27 21:19:56,832 blog.BlogApplicationTests. logStartupProfileInfo 651 :No active profile set, falling back to default profiles: default 
-WARN 2020-07-27 21:19:59,221 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration. openEntityManagerInViewInterceptor 220 :spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
-INFO 2020-07-27 21:19:59,943 com.zaxxer.hikari.HikariDataSource. getConnection 110 :HikariPool-1 - Starting... 
-INFO 2020-07-27 21:20:00,348 com.zaxxer.hikari.HikariDataSource. getConnection 123 :HikariPool-1 - Start completed. 
-INFO 2020-07-27 21:20:03,301 blog.BlogApplicationTests. logStarted 61 :Started BlogApplicationTests in 7.115 seconds (JVM running for 8.388) 
-INFO 2020-07-27 21:20:03,475 com.zaxxer.hikari.HikariDataSource. close 350 :HikariPool-1 - Shutdown initiated... 
-INFO 2020-07-27 21:20:03,493 com.zaxxer.hikari.HikariDataSource. close 352 :HikariPool-1 - Shutdown completed. 
+INFO 2020-07-28 16:59:05,881 blog.BlogApplication. logStarting 55 :Starting BlogApplication on DHZ-ThinkPad-X1-Extreme with PID 2256 (C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog\target\classes started by Dench in C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog) 
+DEBUG 2020-07-28 16:59:05,881 blog.BlogApplication. logStarting 56 :Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+INFO 2020-07-28 16:59:05,881 blog.BlogApplication. logStartupProfileInfo 651 :No active profile set, falling back to default profiles: default 
+WARN 2020-07-28 16:59:07,318 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration. openEntityManagerInViewInterceptor 220 :spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+INFO 2020-07-28 16:59:07,584 com.zaxxer.hikari.HikariDataSource. getConnection 110 :HikariPool-1 - Starting... 
+INFO 2020-07-28 16:59:07,693 com.zaxxer.hikari.HikariDataSource. getConnection 123 :HikariPool-1 - Start completed. 
+INFO 2020-07-28 16:59:09,222 blog.BlogApplication. logStarted 61 :Started BlogApplication in 3.638 seconds (JVM running for 5.022) 

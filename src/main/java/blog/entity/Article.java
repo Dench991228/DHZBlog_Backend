@@ -69,16 +69,15 @@ public class Article implements Serializable {
 	@JoinTable(name="article_tag",joinColumns=@JoinColumn(name="article_aid"),inverseJoinColumns=@JoinColumn(name="tag_tid"))
 	private Set<Tag> tags;
 	
-	//给这篇文章点赞的用户
-	@ManyToMany(mappedBy="liked")
-	@JsonIgnore
-	private Set<User> liker;
-	
-	//收藏这篇文章的用户
-	@ManyToMany(mappedBy="collected")
-	@JsonIgnore
-	private Set<User> collector;
-	
+	//这篇文章得到的赞
+	@OneToMany(mappedBy="liked",cascade = CascadeType.REMOVE)
+	private List<Like> likes;
+
+	//这篇文章得到的收藏
+	@OneToMany(mappedBy = "target", cascade = CascadeType.REMOVE)
+	private List<Collection> collections;
+
+	//关键字
 	@OneToMany(targetEntity=Keyword.class,cascade=CascadeType.REMOVE,fetch=FetchType.LAZY,mappedBy="fromArticle")
 	private List<Keyword> keywords;
 	
@@ -130,18 +129,6 @@ public class Article implements Serializable {
 	public void setTags(Set<Tag> tags) {
 		this.tags = tags;
 	}
-	public Set<User> getLiker() {
-		return liker;
-	}
-	public void setLiker(Set<User> liker) {
-		this.liker = liker;
-	}
-	public Set<User> getCollector() {
-		return collector;
-	}
-	public void setCollector(Set<User> collector) {
-		this.collector = collector;
-	}
 	public Set<Comment> getArticleComments() {
 		return articleComments;
 	}
@@ -160,6 +147,20 @@ public class Article implements Serializable {
 	public void setKeywords(List<Keyword> keywords) {
 		this.keywords = keywords;
 	}
-	
-	
+
+	public List<Like> getLikes() {
+		return likes;
+	}
+
+	public void setLikes(List<Like> likes) {
+		this.likes = likes;
+	}
+
+	public List<Collection> getCollections() {
+		return collections;
+	}
+
+	public void setCollections(List<Collection> collections) {
+		this.collections = collections;
+	}
 }

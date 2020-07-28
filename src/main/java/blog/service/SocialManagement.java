@@ -7,14 +7,15 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import blog.dao.CollectionRepository;
+import blog.dao.LikeRepository;
+import blog.entity.*;
+import blog.util.TimeUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import blog.entity.Article;
-import blog.entity.Comment;
-import blog.entity.User;
 import blog.service_frame.SocialService;
 
 //这一部分主要是和社交相关，包括点赞、收藏、关注等
@@ -27,34 +28,45 @@ public class SocialManagement implements SocialService{
 	@Autowired
 	ArticleManagement article_management;
 	@Autowired
-	CommentManagement comment_management; 
+	CommentManagement comment_management;
+	@Autowired
+	LikeRepository like_repo;
+	@Autowired
+	CollectionRepository collection_repo;
+
 	//一个用户给一篇文章点赞
 	@Override
 	public void like(int uid,int aid) {
 		User u = this.user_management.getUser(uid);
-		u.getLiked().add(this.article_management.getArticle(aid));
-		this.user_management.addUser(u);
+		Article a = this.article_management.getArticle(aid);
+		Like l = new Like();
+		l.setLiked(a);
+		l.setLiker(u);
+		l.setLikeTime(TimeUtil.getCurrentTime());
+		this.like_repo.save(l);
+		this.like_repo.flush();
 	}
+
 	//一个用户取消一篇文章的点赞
 	@Override
 	public void cancelLike(int uid,int aid) {
-		User u = this.user_management.getUser(uid);
-		u.getLiked().remove(this.article_management.getArticle(aid));
-		this.user_management.addUser(u);
+		Like l = this.like_repo.findByLiker_uidANDLiked_aid(uid,aid);
+		this.like_repo.delete(l);
+		this.like_repo.flush();
 	}
 	
 	//一个用户是否给一篇文章点赞
 	@Override
 	public boolean isLiked(int uid,int aid) {
-		User u = this.user_management.getUser(uid);
-		return u.getLiked().contains(this.article_management.getArticle(aid));
+		Like l = this.like_repo.findByLiker_uidANDLiked_aid(uid,aid);
+		return l!=null;
 	}
 	
 	//一篇文章有多少人点赞
 	@Override
 	public int numLikes(int aid) {
 		Article a = this.article_management.getArticle(aid);
-		return a.getLiker().size();
+		return a.getLikes().size();
 	}
 	
 	//一个用户收藏一篇文章
@@ -62,24 +74,26 @@ public class SocialManagement implements SocialService{
 	public void collect(int uid,int aid) {
 		User u = this.user_management.getUser(uid);
 		Article a = this.article_management.getArticle(aid);
-		u.getCollected().add(a);
-		this.user_management.addUser(u);
+		Collection c = new Collection();
+		c.setOwner(u);
+		c.setTarget(a);
+		c.setCollectionTime(TimeUtil.getCurrentTime());
+		this.collection_repo.save(c);
+		this.collection_repo.flush();
 	}
 	//取消一个用户收藏一篇文章
 	@Override
 	public void cancelCollect(int uid ,int aid) {
-		User u = this.user_management.getUser(uid);
-		Article a = this.article_management.getArticle(aid);
-		u.getCollected().remove(a);
-		this.user_management.addUser(u);
+		Collection c = this.collection_repo.findByTarget_aidAndCollector_uid(aid,uid);
+		this.collection_repo.delete(c);
+		this.collection_repo.flush();
 	}
 	
 	//判断一个用户是否收藏一篇文章
 	@Override
 	public boolean isCollected(int uid, int aid) {
-		User u = this.user_management.getUser(uid);
-		Article a = this.article_management.getArticle(aid);
-		return u.getCollected().contains(a);
+		Collection c = this.collection_repo.findByTarget_aidAndCollector_uid(aid,uid);
+		return c!=null;
 	}
 	
 	//一个用户关注一个用户
@@ -122,11 +136,24 @@ public class SocialManagement implements SocialService{
 				log.info("用户"+u+"发布了评论："+c);
 				result.add(this.getMovementItem("Comment", u.getUid(), c.getCid()));
 			}
+
 			//此用户发布文章的行为
 			List<Article> writtenArticle = u.getArticles();
 			for(Article a:writtenArticle) {
 				log.info("用户"+u+"撰写了："+a);
 				result.add(this.getMovementItem("Write",u.getUid(),a.getAid()));
+			}
+
+			//此用户点赞的行为
+			List<Like> likes = u.getMyLike();
+			for(Like l:likes){
+				result.add(this.getMovementItem("Like", u.getUid(), l.getLid()));
+			}
+
+			//此用户收藏的行为
+			List<Collection> collections = u.getMyCollection();
+			for(Collection c:collections){
+				result.add(this.getMovementItem("Collect", u.getUid(), c.getClid()));
 			}
 		}
 		result.sort(new Comparator<Map<String,Object>>(){
@@ -157,20 +184,25 @@ public class SocialManagement implements SocialService{
 		}
 		else if(type.compareTo("Collect")==0) {//这是一条收藏
 			result.put("Type", "Collect");
+			User u = this.user_management.getUser(uid);
+			Collection c = this.collection_repo.getOne(id);
+			result.put("UID",u.getUid());
+			
 		}
 		else if(type.compareTo("Write")==0) {//发布文章
 			result.put("Type", "Write");
+			User u = this.user_management.getUser(uid);
+			Article a = this.article_management.getArticle(id);
+			result.put("UID", u.getUid());
+			result.put("AID", a.getAid());
+			result.put("Time",a.getDatetime());
+			result.put("TargetTitle", a.getTitle());
+			result.put("Username",u.getUsername());
+			return result;
 		}
 		else {//点赞
 			result.put("Type", "Write");
 		}
-		User u = this.user_management.getUser(uid);
-		Article a = this.article_management.getArticle(id);
-		result.put("UID", u.getUid());
-		result.put("AID", a.getAid());
-		result.put("Time",a.getDatetime());
-		result.put("TargetTitle", a.getTitle());
-		result.put("Username",u.getUsername());
-		return result;
+
 	}
 }

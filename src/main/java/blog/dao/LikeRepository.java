@@ -11,5 +11,5 @@ public interface LikeRepository extends JpaRepository<Like,Integer> {
     List<Like> findByLiker_uid(int uid);
 
     //根据用户id和文章id找点赞记录
-    Like findByLiker_uidANDLiked_aid(int uid, int aid);
+    Like findByLiker_uidAndLiked_aid(int uid, int aid);
 }

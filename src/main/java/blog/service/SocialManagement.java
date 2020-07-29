@@ -37,20 +37,23 @@ public class SocialManagement implements SocialService{
 	//一个用户给一篇文章点赞
 	@Override
 	public void like(int uid,int aid) {
+		log.info("准备开始点赞");
 		User u = this.user_management.getUser(uid);
 		Article a = this.article_management.getArticle(aid);
 		Like l = new Like();
 		l.setLiked(a);
 		l.setLiker(u);
 		l.setLikeTime(TimeUtil.getCurrentTime());
+		log.info(l.toString());
 		this.like_repo.save(l);
 		this.like_repo.flush();
+		log.info("点赞完成");
 	}
 
 	//一个用户取消一篇文章的点赞
 	@Override
 	public void cancelLike(int uid,int aid) {
-		Like l = this.like_repo.findByLiker_uidANDLiked_aid(uid,aid);
+		Like l = this.like_repo.findByLiker_uidAndLiked_aid(uid,aid);
 		this.like_repo.delete(l);
 		this.like_repo.flush();
 	}
@@ -58,7 +61,7 @@ public class SocialManagement implements SocialService{
 	//一个用户是否给一篇文章点赞
 	@Override
 	public boolean isLiked(int uid,int aid) {
-		Like l = this.like_repo.findByLiker_uidANDLiked_aid(uid,aid);
+		Like l = this.like_repo.findByLiker_uidAndLiked_aid(uid,aid);
 		return l!=null;
 	}
 	
@@ -180,14 +183,17 @@ public class SocialManagement implements SocialService{
 			result.put("TargetTitle", target.getTitle());
 			result.put("Username",sender.getUsername());
 			result.put("Type", "Comment");
-			return result;
 		}
 		else if(type.compareTo("Collect")==0) {//这是一条收藏
 			result.put("Type", "Collect");
 			User u = this.user_management.getUser(uid);
 			Collection c = this.collection_repo.getOne(id);
 			result.put("UID",u.getUid());
-			
+			Article target = c.getTarget();
+			result.put("AID", target.getAid());
+			result.put("Time",c.getCollectionTime());
+			result.put("TargetTitle", target.getTitle());
+			result.put("Username", u.getUsername());
 		}
 		else if(type.compareTo("Write")==0) {//发布文章
 			result.put("Type", "Write");
@@ -198,11 +204,18 @@ public class SocialManagement implements SocialService{
 			result.put("Time",a.getDatetime());
 			result.put("TargetTitle", a.getTitle());
 			result.put("Username",u.getUsername());
-			return result;
 		}
 		else {//点赞
-			result.put("Type", "Write");
+			result.put("Type", "Like");
+			User u = this.user_management.getUser(uid);
+			Like l = this.like_repo.getOne(id);
+			Article a = l.getLiked();
+			result.put("UID", u.getUid());
+			result.put("AID", a.getAid());
+			result.put("Time", l.getLikeTime());
+			result.put("TargetTitle", a.getTitle());
+			result.put("Username", u.getUsername());
 		}
-
+		return result;
 	}
 }

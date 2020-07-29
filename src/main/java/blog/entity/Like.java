@@ -3,7 +3,7 @@ package blog.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="like")
+@Table(name="likes")
 public class Like {
 
     //点赞记录的key
@@ -55,5 +55,15 @@ public class Like {
 
     public void setLiked(Article liked) {
         this.liked = liked;
+    }
+
+    @Override
+    public String toString() {
+        return "Like{" +
+                "lid=" + lid +
+                ", likeTime='" + likeTime + '\'' +
+                ", liker=" + liker +
+                ", liked=" + liked +
+                '}';
     }
 }

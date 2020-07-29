@@ -1,7 +1,894 @@
-INFO 2020-07-28 16:59:05,881 blog.BlogApplication. logStarting 55 :Starting BlogApplication on DHZ-ThinkPad-X1-Extreme with PID 2256 (C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog\target\classes started by Dench in C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog) 
-DEBUG 2020-07-28 16:59:05,881 blog.BlogApplication. logStarting 56 :Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
-INFO 2020-07-28 16:59:05,881 blog.BlogApplication. logStartupProfileInfo 651 :No active profile set, falling back to default profiles: default 
-WARN 2020-07-28 16:59:07,318 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration. openEntityManagerInViewInterceptor 220 :spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
-INFO 2020-07-28 16:59:07,584 com.zaxxer.hikari.HikariDataSource. getConnection 110 :HikariPool-1 - Starting... 
-INFO 2020-07-28 16:59:07,693 com.zaxxer.hikari.HikariDataSource. getConnection 123 :HikariPool-1 - Start completed. 
-INFO 2020-07-28 16:59:09,222 blog.BlogApplication. logStarted 61 :Started BlogApplication in 3.638 seconds (JVM running for 5.022) 
+INFO 2020-07-29 08:59:28,165 blog.BlogApplication. logStarting 55 :Starting BlogApplication on DHZ-ThinkPad-X1-Extreme with PID 12740 (C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog\target\classes started by Dench in C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog) 
+DEBUG 2020-07-29 08:59:28,169 blog.BlogApplication. logStarting 56 :Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+INFO 2020-07-29 08:59:28,170 blog.BlogApplication. logStartupProfileInfo 651 :No active profile set, falling back to default profiles: default 
+WARN 2020-07-29 08:59:29,547 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration. openEntityManagerInViewInterceptor 220 :spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+INFO 2020-07-29 08:59:29,750 com.zaxxer.hikari.HikariDataSource. getConnection 110 :HikariPool-1 - Starting... 
+INFO 2020-07-29 08:59:29,841 com.zaxxer.hikari.HikariDataSource. getConnection 123 :HikariPool-1 - Start completed. 
+WARN 2020-07-29 08:59:30,441 o.h.t.schema.internal.ExceptionHandlerLoggedImpl. handleException 27 :GenerationTarget encountered exception accepting command : Error executing DDL "create table like (lid integer not null auto_increment, like_time varchar(120), target_id integer not null, liker_id integer not null, primary key (lid)) engine=MyISAM" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create table like (lid integer not null auto_increment, like_time varchar(120), target_id integer not null, liker_id integer not null, primary key (lid)) engine=MyISAM" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:277)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:71)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like (lid integer not null auto_increment, like_time varchar(120), target_id int' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 18 common frames omitted
+WARN 2020-07-29 08:59:30,933 o.h.t.schema.internal.ExceptionHandlerLoggedImpl. handleException 27 :GenerationTarget encountered exception accepting command : Error executing DDL "alter table like add constraint FKg51gp33u64ydvhssvdidcwv2n foreign key (target_id) references articles (aid)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table like add constraint FKg51gp33u64ydvhssvdidcwv2n foreign key (target_id) references articles (aid)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:433)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:249)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like add constraint FKg51gp33u64ydvhssvdidcwv2n foreign key (target_id) referenc' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 17 common frames omitted
+WARN 2020-07-29 08:59:30,934 o.h.t.schema.internal.ExceptionHandlerLoggedImpl. handleException 27 :GenerationTarget encountered exception accepting command : Error executing DDL "alter table like add constraint FK6mj7iinxmhkg95mapi6xmycqh foreign key (liker_id) references users (uid)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table like add constraint FK6mj7iinxmhkg95mapi6xmycqh foreign key (liker_id) references users (uid)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:433)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:249)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like add constraint FK6mj7iinxmhkg95mapi6xmycqh foreign key (liker_id) reference' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 17 common frames omitted
+WARN 2020-07-29 08:59:31,189 o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext. refresh 559 :Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'likeRepository': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract blog.entity.Like blog.dao.LikeRepository.findByLiker_uidANDLiked_aid(int,int)! No property ANDLiked found for type int! Traversed path: Like.liker.uid. 
+INFO 2020-07-29 08:59:31,192 com.zaxxer.hikari.HikariDataSource. close 350 :HikariPool-1 - Shutdown initiated... 
+INFO 2020-07-29 08:59:31,200 com.zaxxer.hikari.HikariDataSource. close 352 :HikariPool-1 - Shutdown completed. 
+ERROR 2020-07-29 08:59:31,389 org.springframework.boot.SpringApplication. reportFailure 837 :Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'likeRepository': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract blog.entity.Like blog.dao.LikeRepository.findByLiker_uidANDLiked_aid(int,int)! No property ANDLiked found for type int! Traversed path: Like.liker.uid.
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:178)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:101)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1821)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getObjectForBeanInstance(AbstractAutowireCapableBeanFactory.java:1266)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:621)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:609)
+	at org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:51)
+	at org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:36)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:898)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at blog.BlogApplication.main(BlogApplication.java:17)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract blog.entity.Like blog.dao.LikeRepository.findByLiker_uidANDLiked_aid(int,int)! No property ANDLiked found for type int! Traversed path: Like.liker.uid.
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:96)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:107)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:218)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:81)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:99)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:92)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1051)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:94)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:84)
+	at java.util.Optional.map(Optional.java:215)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:84)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:331)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:297)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:212)
+	at org.springframework.data.util.Lazy.get(Lazy.java:94)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.getObject(RepositoryFactoryBeanSupport.java:244)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.getObject(RepositoryFactoryBeanSupport.java:57)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:171)
+	... 29 common frames omitted
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property ANDLiked found for type int! Traversed path: Like.liker.uid.
+	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:94)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:382)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:358)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:392)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:416)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:416)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:416)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:416)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:358)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:342)
+	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:314)
+	at java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:324)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:293)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:276)
+	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:82)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:251)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:252)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:381)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:382)
+	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:97)
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:89)
+	... 54 common frames omitted
+INFO 2020-07-29 09:00:14,343 blog.BlogApplication. logStarting 55 :Starting BlogApplication on DHZ-ThinkPad-X1-Extreme with PID 19408 (C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog\target\classes started by Dench in C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog) 
+DEBUG 2020-07-29 09:00:14,344 blog.BlogApplication. logStarting 56 :Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+INFO 2020-07-29 09:00:14,345 blog.BlogApplication. logStartupProfileInfo 651 :No active profile set, falling back to default profiles: default 
+WARN 2020-07-29 09:00:15,837 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration. openEntityManagerInViewInterceptor 220 :spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+INFO 2020-07-29 09:00:16,098 com.zaxxer.hikari.HikariDataSource. getConnection 110 :HikariPool-1 - Starting... 
+INFO 2020-07-29 09:00:16,191 com.zaxxer.hikari.HikariDataSource. getConnection 123 :HikariPool-1 - Start completed. 
+WARN 2020-07-29 09:00:16,772 o.h.t.schema.internal.ExceptionHandlerLoggedImpl. handleException 27 :GenerationTarget encountered exception accepting command : Error executing DDL "create table like (lid integer not null auto_increment, like_time varchar(120), target_id integer not null, liker_id integer not null, primary key (lid)) engine=MyISAM" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create table like (lid integer not null auto_increment, like_time varchar(120), target_id integer not null, liker_id integer not null, primary key (lid)) engine=MyISAM" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:277)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:71)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like (lid integer not null auto_increment, like_time varchar(120), target_id int' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 18 common frames omitted
+WARN 2020-07-29 09:00:17,260 o.h.t.schema.internal.ExceptionHandlerLoggedImpl. handleException 27 :GenerationTarget encountered exception accepting command : Error executing DDL "alter table like add constraint FKg51gp33u64ydvhssvdidcwv2n foreign key (target_id) references articles (aid)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table like add constraint FKg51gp33u64ydvhssvdidcwv2n foreign key (target_id) references articles (aid)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:433)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:249)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like add constraint FKg51gp33u64ydvhssvdidcwv2n foreign key (target_id) referenc' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 17 common frames omitted
+WARN 2020-07-29 09:00:17,269 o.h.t.schema.internal.ExceptionHandlerLoggedImpl. handleException 27 :GenerationTarget encountered exception accepting command : Error executing DDL "alter table like add constraint FK6mj7iinxmhkg95mapi6xmycqh foreign key (liker_id) references users (uid)" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table like add constraint FK6mj7iinxmhkg95mapi6xmycqh foreign key (liker_id) references users (uid)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:433)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:249)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like add constraint FK6mj7iinxmhkg95mapi6xmycqh foreign key (liker_id) reference' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 17 common frames omitted
+INFO 2020-07-29 09:00:17,665 blog.BlogApplication. logStarted 61 :Started BlogApplication in 3.634 seconds (JVM running for 4.558) 
+INFO 2020-07-29 09:01:46,284 blog.BlogApplication. logStarting 55 :Starting BlogApplication on DHZ-ThinkPad-X1-Extreme with PID 17740 (C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog\target\classes started by Dench in C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog) 
+DEBUG 2020-07-29 09:01:46,286 blog.BlogApplication. logStarting 56 :Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+INFO 2020-07-29 09:01:46,286 blog.BlogApplication. logStartupProfileInfo 651 :No active profile set, falling back to default profiles: default 
+WARN 2020-07-29 09:01:47,739 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration. openEntityManagerInViewInterceptor 220 :spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+INFO 2020-07-29 09:01:47,981 com.zaxxer.hikari.HikariDataSource. getConnection 110 :HikariPool-1 - Starting... 
+INFO 2020-07-29 09:01:48,085 com.zaxxer.hikari.HikariDataSource. getConnection 123 :HikariPool-1 - Start completed. 
+INFO 2020-07-29 09:01:49,737 blog.BlogApplication. logStarted 61 :Started BlogApplication in 3.748 seconds (JVM running for 4.579) 
+INFO 2020-07-29 09:02:13,054 blog.BlogApplication. logStarting 55 :Starting BlogApplication on DHZ-ThinkPad-X1-Extreme with PID 15280 (C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog\target\classes started by Dench in C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog) 
+DEBUG 2020-07-29 09:02:13,056 blog.BlogApplication. logStarting 56 :Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+INFO 2020-07-29 09:02:13,056 blog.BlogApplication. logStartupProfileInfo 651 :No active profile set, falling back to default profiles: default 
+WARN 2020-07-29 09:02:14,691 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration. openEntityManagerInViewInterceptor 220 :spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+INFO 2020-07-29 09:02:14,954 com.zaxxer.hikari.HikariDataSource. getConnection 110 :HikariPool-1 - Starting... 
+INFO 2020-07-29 09:02:15,067 com.zaxxer.hikari.HikariDataSource. getConnection 123 :HikariPool-1 - Start completed. 
+INFO 2020-07-29 09:02:16,960 blog.BlogApplication. logStarted 61 :Started BlogApplication in 4.313 seconds (JVM running for 5.34) 
+INFO 2020-07-29 09:02:31,923 blog.controller.ArticleController. sendArticleByAID 137 :Article get: Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=48] 
+WARN 2020-07-29 09:02:34,363 org.hibernate.engine.jdbc.spi.SqlExceptionHelper. logExceptions 137 :SQL Error: 1364, SQLState: HY000 
+ERROR 2020-07-29 09:02:34,364 org.hibernate.engine.jdbc.spi.SqlExceptionHelper. logExceptions 142 :Field 'user_uid' doesn't have a default value 
+ERROR 2020-07-29 09:02:34,386 o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]. log 175 :Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement] with root cause 
+java.sql.SQLException: Field 'user_uid' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	at org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:57)
+	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:43)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3152)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3756)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:330)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:123)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:718)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:704)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:366)
+	at com.sun.proxy.$Proxy88.persist(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:314)
+	at com.sun.proxy.$Proxy88.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:554)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.data.repository.core.support.ImplementationInvocationMetadata.invoke(ImplementationInvocationMetadata.java:72)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:382)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:205)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:549)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:155)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:178)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy111.save(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205)
+	at com.sun.proxy.$Proxy71.save(Unknown Source)
+	at blog.service.SocialManagement.like(SocialManagement.java:46)
+	at blog.controller.SocialController.changeLikeStatus(SocialController.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+WARN 2020-07-29 09:02:41,080 org.hibernate.engine.jdbc.spi.SqlExceptionHelper. logExceptions 137 :SQL Error: 1364, SQLState: HY000 
+ERROR 2020-07-29 09:02:41,080 org.hibernate.engine.jdbc.spi.SqlExceptionHelper. logExceptions 142 :Field 'user_uid' doesn't have a default value 
+ERROR 2020-07-29 09:02:41,083 o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]. log 175 :Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement] with root cause 
+java.sql.SQLException: Field 'user_uid' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	at org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:57)
+	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:43)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3152)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3756)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:330)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:123)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:718)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:704)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:366)
+	at com.sun.proxy.$Proxy88.persist(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:314)
+	at com.sun.proxy.$Proxy88.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:554)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.data.repository.core.support.ImplementationInvocationMetadata.invoke(ImplementationInvocationMetadata.java:72)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:382)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:205)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:549)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:155)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:178)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy111.save(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205)
+	at com.sun.proxy.$Proxy71.save(Unknown Source)
+	at blog.service.SocialManagement.like(SocialManagement.java:46)
+	at blog.controller.SocialController.changeLikeStatus(SocialController.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+INFO 2020-07-29 09:02:53,137 blog.service.SocialManagement. getMovementList 132 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;关注了UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx; 
+INFO 2020-07-29 09:02:53,141 blog.service.SocialManagement. getMovementList 143 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=2, title=测试图片回显, NumRead=20] 
+INFO 2020-07-29 09:02:53,144 blog.service.SocialManagement. getMovementList 143 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=25, title=测试新发布的文章, NumRead=0] 
+INFO 2020-07-29 09:02:53,146 blog.service.SocialManagement. getMovementList 143 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=8, title=测试message, NumRead=0] 
+INFO 2020-07-29 09:02:53,148 blog.service.SocialManagement. getMovementList 143 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=9, title=再次测试发送信息, NumRead=0] 
+INFO 2020-07-29 09:02:53,150 blog.service.SocialManagement. getMovementList 143 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=10, title=再再次测试$message, NumRead=0] 
+INFO 2020-07-29 09:02:53,152 blog.service.SocialManagement. getMovementList 143 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=50] 
+INFO 2020-07-29 09:02:53,154 blog.service.SocialManagement. getMovementList 143 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=15, title=尝试发送成功之后的间隔跳转, NumRead=0] 
+INFO 2020-07-29 09:02:53,156 blog.service.SocialManagement. getMovementList 143 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=16, title=测试计时器, NumRead=0] 
+INFO 2020-07-29 09:02:53,157 blog.service.SocialManagement. getMovementList 143 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=18, title=再次进行尝试, NumRead=2] 
+INFO 2020-07-29 09:02:53,158 blog.service.SocialManagement. getMovementList 143 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=21, title=重新编译后尝试, NumRead=0] 
+INFO 2020-07-29 09:02:53,160 blog.service.SocialManagement. getMovementList 143 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=26, title=近期更新计划, NumRead=0] 
+INFO 2020-07-29 09:02:53,165 blog.service.SocialManagement. getMovementList 168 :最终的动态列表如下[{AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-29 09:02:51, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-27 20:09:14, Type=Write, UID=1, Username=dench}, {AID=26, TargetTitle=近期更新计划, Time=2020-07-27 19:24:01, Type=Write, UID=1, Username=dench}, {AID=25, TargetTitle=测试新发布的文章, Time=2020-07-27 11:19:09, Type=Write, UID=1, Username=dench}, {AID=21, TargetTitle=重新编译后尝试, Time=2020-07-27 09:30:29, Type=Write, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-27 09:28:32, Type=Write, UID=1, Username=dench}, {AID=16, TargetTitle=测试计时器, Time=2020-07-27 09:26:23, Type=Write, UID=1, Username=dench}, {AID=15, TargetTitle=尝试发送成功之后的间隔跳转, Time=2020-07-27 09:25:28, Type=Write, UID=1, Username=dench}, {AID=10, TargetTitle=再再次测试$message, Time=2020-07-27 08:11:40, Type=Write, UID=1, Username=dench}, {AID=9, TargetTitle=再次测试发送信息, Time=2020-07-27 08:10:53, Type=Write, UID=1, Username=dench}, {AID=8, TargetTitle=测试message, Time=2020-07-27 08:09:35, Type=Write, UID=1, Username=dench}, {AID=2, TargetTitle=测试图片回显, Time=2020-07-26 23:42:40, Type=Write, UID=1, Username=dench}] 
+INFO 2020-07-29 09:14:23,538 com.zaxxer.hikari.HikariDataSource. close 350 :HikariPool-1 - Shutdown initiated... 
+INFO 2020-07-29 09:14:23,543 com.zaxxer.hikari.HikariDataSource. close 352 :HikariPool-1 - Shutdown completed. 
+INFO 2020-07-29 09:14:23,687 blog.BlogApplication. main 15 :hahaha!!! 
+INFO 2020-07-29 09:14:23,687 blog.BlogApplication. main 16 :C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog 
+INFO 2020-07-29 09:14:23,727 blog.BlogApplication. logStarting 55 :Starting BlogApplication on DHZ-ThinkPad-X1-Extreme with PID 15280 (C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog\target\classes started by Dench in C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog) 
+DEBUG 2020-07-29 09:14:23,728 blog.BlogApplication. logStarting 56 :Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+INFO 2020-07-29 09:14:23,728 blog.BlogApplication. logStartupProfileInfo 651 :No active profile set, falling back to default profiles: default 
+INFO 2020-07-29 09:14:24,130 com.zaxxer.hikari.HikariDataSource. getConnection 110 :HikariPool-2 - Starting... 
+INFO 2020-07-29 09:14:24,134 com.zaxxer.hikari.HikariDataSource. getConnection 123 :HikariPool-2 - Start completed. 
+WARN 2020-07-29 09:14:24,164 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration. openEntityManagerInViewInterceptor 220 :spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+INFO 2020-07-29 09:14:24,988 blog.BlogApplication. logStarted 61 :Started BlogApplication in 1.294 seconds (JVM running for 733.368) 
+INFO 2020-07-29 09:14:40,209 com.zaxxer.hikari.HikariDataSource. close 350 :HikariPool-2 - Shutdown initiated... 
+INFO 2020-07-29 09:14:40,213 com.zaxxer.hikari.HikariDataSource. close 352 :HikariPool-2 - Shutdown completed. 
+INFO 2020-07-29 09:14:40,325 blog.BlogApplication. main 15 :hahaha!!! 
+INFO 2020-07-29 09:14:40,325 blog.BlogApplication. main 16 :C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog 
+INFO 2020-07-29 09:14:40,350 blog.BlogApplication. logStarting 55 :Starting BlogApplication on DHZ-ThinkPad-X1-Extreme with PID 15280 (C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog\target\classes started by Dench in C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog) 
+DEBUG 2020-07-29 09:14:40,350 blog.BlogApplication. logStarting 56 :Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+INFO 2020-07-29 09:14:40,350 blog.BlogApplication. logStartupProfileInfo 651 :No active profile set, falling back to default profiles: default 
+INFO 2020-07-29 09:14:40,683 com.zaxxer.hikari.HikariDataSource. getConnection 110 :HikariPool-3 - Starting... 
+INFO 2020-07-29 09:14:40,687 com.zaxxer.hikari.HikariDataSource. getConnection 123 :HikariPool-3 - Start completed. 
+WARN 2020-07-29 09:14:40,715 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration. openEntityManagerInViewInterceptor 220 :spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+INFO 2020-07-29 09:14:41,537 blog.BlogApplication. logStarted 61 :Started BlogApplication in 1.207 seconds (JVM running for 749.917) 
+INFO 2020-07-29 09:14:47,157 blog.BlogApplication. logStarting 55 :Starting BlogApplication on DHZ-ThinkPad-X1-Extreme with PID 13460 (C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog\target\classes started by Dench in C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog) 
+DEBUG 2020-07-29 09:14:47,158 blog.BlogApplication. logStarting 56 :Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+INFO 2020-07-29 09:14:47,159 blog.BlogApplication. logStartupProfileInfo 651 :No active profile set, falling back to default profiles: default 
+WARN 2020-07-29 09:14:48,811 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration. openEntityManagerInViewInterceptor 220 :spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+INFO 2020-07-29 09:14:49,108 com.zaxxer.hikari.HikariDataSource. getConnection 110 :HikariPool-1 - Starting... 
+INFO 2020-07-29 09:14:49,230 com.zaxxer.hikari.HikariDataSource. getConnection 123 :HikariPool-1 - Start completed. 
+INFO 2020-07-29 09:14:51,166 blog.BlogApplication. logStarted 61 :Started BlogApplication in 4.295 seconds (JVM running for 5.067) 
+INFO 2020-07-29 09:15:00,518 blog.controller.ArticleController. sendArticleByAID 137 :Article get: Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=50] 
+INFO 2020-07-29 09:15:07,160 blog.service.SocialManagement. like 40 :准备开始点赞 
+INFO 2020-07-29 09:15:07,165 blog.service.SocialManagement. like 47 :Like{lid=0, likeTime='2020-07-29 09:15:07', liker=UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;, liked=Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=52]} 
+WARN 2020-07-29 09:15:07,183 org.hibernate.engine.jdbc.spi.SqlExceptionHelper. logExceptions 137 :SQL Error: 1364, SQLState: HY000 
+ERROR 2020-07-29 09:15:07,184 org.hibernate.engine.jdbc.spi.SqlExceptionHelper. logExceptions 142 :Field 'user_uid' doesn't have a default value 
+ERROR 2020-07-29 09:15:07,201 o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]. log 175 :Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement] with root cause 
+java.sql.SQLException: Field 'user_uid' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	at org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:57)
+	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:43)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3152)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3756)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:330)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:123)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:718)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:704)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:366)
+	at com.sun.proxy.$Proxy88.persist(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:314)
+	at com.sun.proxy.$Proxy88.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:554)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.data.repository.core.support.ImplementationInvocationMetadata.invoke(ImplementationInvocationMetadata.java:72)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:382)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:205)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:549)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:155)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:178)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy112.save(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205)
+	at com.sun.proxy.$Proxy71.save(Unknown Source)
+	at blog.service.SocialManagement.like(SocialManagement.java:48)
+	at blog.controller.SocialController.changeLikeStatus(SocialController.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+INFO 2020-07-29 09:24:28,289 blog.BlogApplication. logStarting 55 :Starting BlogApplication on DHZ-ThinkPad-X1-Extreme with PID 18912 (C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog\target\classes started by Dench in C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog) 
+DEBUG 2020-07-29 09:24:28,290 blog.BlogApplication. logStarting 56 :Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+INFO 2020-07-29 09:24:28,290 blog.BlogApplication. logStartupProfileInfo 651 :No active profile set, falling back to default profiles: default 
+WARN 2020-07-29 09:24:29,582 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration. openEntityManagerInViewInterceptor 220 :spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+INFO 2020-07-29 09:24:29,789 com.zaxxer.hikari.HikariDataSource. getConnection 110 :HikariPool-1 - Starting... 
+INFO 2020-07-29 09:24:29,875 com.zaxxer.hikari.HikariDataSource. getConnection 123 :HikariPool-1 - Start completed. 
+INFO 2020-07-29 09:24:31,505 blog.BlogApplication. logStarted 61 :Started BlogApplication in 3.493 seconds (JVM running for 4.248) 
+INFO 2020-07-29 09:24:36,593 blog.controller.ArticleController. sendArticleByAID 137 :Article get: Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=52] 
+INFO 2020-07-29 09:24:38,438 blog.service.SocialManagement. like 40 :准备开始点赞 
+INFO 2020-07-29 09:24:38,443 blog.service.SocialManagement. like 47 :Like{lid=0, likeTime='2020-07-29 09:24:38', liker=UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;, liked=Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=54]} 
+INFO 2020-07-29 09:24:38,456 blog.service.SocialManagement. like 50 :点赞完成 
+INFO 2020-07-29 09:24:41,899 blog.service.SocialManagement. like 40 :准备开始点赞 
+INFO 2020-07-29 09:24:41,902 blog.service.SocialManagement. like 47 :Like{lid=0, likeTime='2020-07-29 09:24:41', liker=UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;, liked=Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=54]} 
+INFO 2020-07-29 09:24:41,905 blog.service.SocialManagement. like 50 :点赞完成 
+INFO 2020-07-29 09:24:42,188 blog.service.SocialManagement. like 40 :准备开始点赞 
+INFO 2020-07-29 09:24:42,190 blog.service.SocialManagement. like 47 :Like{lid=0, likeTime='2020-07-29 09:24:42', liker=UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;, liked=Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=54]} 
+INFO 2020-07-29 09:24:42,195 blog.service.SocialManagement. like 50 :点赞完成 
+INFO 2020-07-29 09:24:44,045 blog.service.SocialManagement. like 40 :准备开始点赞 
+INFO 2020-07-29 09:24:44,047 blog.service.SocialManagement. like 47 :Like{lid=0, likeTime='2020-07-29 09:24:44', liker=UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;, liked=Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=54]} 
+INFO 2020-07-29 09:24:44,054 blog.service.SocialManagement. like 50 :点赞完成 
+INFO 2020-07-29 09:24:46,183 blog.service.SocialManagement. getMovementList 135 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;关注了UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx; 
+INFO 2020-07-29 09:24:46,186 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=2, title=测试图片回显, NumRead=20] 
+INFO 2020-07-29 09:24:46,188 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=25, title=测试新发布的文章, NumRead=0] 
+INFO 2020-07-29 09:24:46,190 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=8, title=测试message, NumRead=0] 
+INFO 2020-07-29 09:24:46,192 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=9, title=再次测试发送信息, NumRead=0] 
+INFO 2020-07-29 09:24:46,194 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=10, title=再再次测试$message, NumRead=0] 
+INFO 2020-07-29 09:24:46,195 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=54] 
+INFO 2020-07-29 09:24:46,196 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=15, title=尝试发送成功之后的间隔跳转, NumRead=0] 
+INFO 2020-07-29 09:24:46,198 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=16, title=测试计时器, NumRead=0] 
+INFO 2020-07-29 09:24:46,199 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=18, title=再次进行尝试, NumRead=2] 
+INFO 2020-07-29 09:24:46,201 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=21, title=重新编译后尝试, NumRead=0] 
+INFO 2020-07-29 09:24:46,202 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=26, title=近期更新计划, NumRead=0] 
+INFO 2020-07-29 09:24:46,207 blog.service.SocialManagement. getMovementList 171 :最终的动态列表如下[{AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-29 09:24:44, Type=Write, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-29 09:02:51, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-27 20:09:14, Type=Write, UID=1, Username=dench}, {AID=26, TargetTitle=近期更新计划, Time=2020-07-27 19:24:01, Type=Write, UID=1, Username=dench}, {AID=25, TargetTitle=测试新发布的文章, Time=2020-07-27 11:19:09, Type=Write, UID=1, Username=dench}, {AID=21, TargetTitle=重新编译后尝试, Time=2020-07-27 09:30:29, Type=Write, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-27 09:28:32, Type=Write, UID=1, Username=dench}, {AID=16, TargetTitle=测试计时器, Time=2020-07-27 09:26:23, Type=Write, UID=1, Username=dench}, {AID=15, TargetTitle=尝试发送成功之后的间隔跳转, Time=2020-07-27 09:25:28, Type=Write, UID=1, Username=dench}, {AID=10, TargetTitle=再再次测试$message, Time=2020-07-27 08:11:40, Type=Write, UID=1, Username=dench}, {AID=9, TargetTitle=再次测试发送信息, Time=2020-07-27 08:10:53, Type=Write, UID=1, Username=dench}, {AID=8, TargetTitle=测试message, Time=2020-07-27 08:09:35, Type=Write, UID=1, Username=dench}, {AID=2, TargetTitle=测试图片回显, Time=2020-07-26 23:42:40, Type=Write, UID=1, Username=dench}] 
+INFO 2020-07-29 09:24:50,967 blog.controller.ArticleController. sendArticleByAID 137 :Article get: Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=54] 
+INFO 2020-07-29 09:24:57,206 blog.service.SocialManagement. getMovementList 135 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;关注了UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx; 
+INFO 2020-07-29 09:24:57,208 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=2, title=测试图片回显, NumRead=20] 
+INFO 2020-07-29 09:24:57,210 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=25, title=测试新发布的文章, NumRead=0] 
+INFO 2020-07-29 09:24:57,212 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=8, title=测试message, NumRead=0] 
+INFO 2020-07-29 09:24:57,214 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=9, title=再次测试发送信息, NumRead=0] 
+INFO 2020-07-29 09:24:57,215 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=10, title=再再次测试$message, NumRead=0] 
+INFO 2020-07-29 09:24:57,216 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=56] 
+INFO 2020-07-29 09:24:57,218 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=15, title=尝试发送成功之后的间隔跳转, NumRead=0] 
+INFO 2020-07-29 09:24:57,219 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=16, title=测试计时器, NumRead=0] 
+INFO 2020-07-29 09:24:57,220 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=18, title=再次进行尝试, NumRead=2] 
+INFO 2020-07-29 09:24:57,221 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=21, title=重新编译后尝试, NumRead=0] 
+INFO 2020-07-29 09:24:57,222 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=26, title=近期更新计划, NumRead=0] 
+INFO 2020-07-29 09:24:57,226 blog.service.SocialManagement. getMovementList 171 :最终的动态列表如下[{AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-29 09:02:51, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-27 20:09:14, Type=Write, UID=1, Username=dench}, {AID=26, TargetTitle=近期更新计划, Time=2020-07-27 19:24:01, Type=Write, UID=1, Username=dench}, {AID=25, TargetTitle=测试新发布的文章, Time=2020-07-27 11:19:09, Type=Write, UID=1, Username=dench}, {AID=21, TargetTitle=重新编译后尝试, Time=2020-07-27 09:30:29, Type=Write, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-27 09:28:32, Type=Write, UID=1, Username=dench}, {AID=16, TargetTitle=测试计时器, Time=2020-07-27 09:26:23, Type=Write, UID=1, Username=dench}, {AID=15, TargetTitle=尝试发送成功之后的间隔跳转, Time=2020-07-27 09:25:28, Type=Write, UID=1, Username=dench}, {AID=10, TargetTitle=再再次测试$message, Time=2020-07-27 08:11:40, Type=Write, UID=1, Username=dench}, {AID=9, TargetTitle=再次测试发送信息, Time=2020-07-27 08:10:53, Type=Write, UID=1, Username=dench}, {AID=8, TargetTitle=测试message, Time=2020-07-27 08:09:35, Type=Write, UID=1, Username=dench}, {AID=2, TargetTitle=测试图片回显, Time=2020-07-26 23:42:40, Type=Write, UID=1, Username=dench}] 
+INFO 2020-07-29 09:25:03,619 blog.controller.ArticleController. sendArticleByAID 137 :Article get: Article [aid=18, title=再次进行尝试, NumRead=2] 
+INFO 2020-07-29 09:25:05,535 blog.service.SocialManagement. like 40 :准备开始点赞 
+INFO 2020-07-29 09:25:05,538 blog.service.SocialManagement. like 47 :Like{lid=0, likeTime='2020-07-29 09:25:05', liker=UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;, liked=Article [aid=18, title=再次进行尝试, NumRead=4]} 
+INFO 2020-07-29 09:25:05,550 blog.service.SocialManagement. like 50 :点赞完成 
+INFO 2020-07-29 09:25:08,124 blog.service.SocialManagement. getMovementList 135 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;关注了UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx; 
+INFO 2020-07-29 09:25:08,127 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=2, title=测试图片回显, NumRead=20] 
+INFO 2020-07-29 09:25:08,128 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=25, title=测试新发布的文章, NumRead=0] 
+INFO 2020-07-29 09:25:08,130 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=8, title=测试message, NumRead=0] 
+INFO 2020-07-29 09:25:08,131 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=9, title=再次测试发送信息, NumRead=0] 
+INFO 2020-07-29 09:25:08,132 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=10, title=再再次测试$message, NumRead=0] 
+INFO 2020-07-29 09:25:08,134 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=56] 
+INFO 2020-07-29 09:25:08,135 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=15, title=尝试发送成功之后的间隔跳转, NumRead=0] 
+INFO 2020-07-29 09:25:08,136 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=16, title=测试计时器, NumRead=0] 
+INFO 2020-07-29 09:25:08,137 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=18, title=再次进行尝试, NumRead=4] 
+INFO 2020-07-29 09:25:08,138 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=21, title=重新编译后尝试, NumRead=0] 
+INFO 2020-07-29 09:25:08,139 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=26, title=近期更新计划, NumRead=0] 
+INFO 2020-07-29 09:25:08,152 blog.service.SocialManagement. getMovementList 171 :最终的动态列表如下[{AID=18, TargetTitle=再次进行尝试, Time=2020-07-29 09:25:05, Type=Write, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-29 09:25:04, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-29 09:02:51, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-27 20:09:14, Type=Write, UID=1, Username=dench}, {AID=26, TargetTitle=近期更新计划, Time=2020-07-27 19:24:01, Type=Write, UID=1, Username=dench}, {AID=25, TargetTitle=测试新发布的文章, Time=2020-07-27 11:19:09, Type=Write, UID=1, Username=dench}, {AID=21, TargetTitle=重新编译后尝试, Time=2020-07-27 09:30:29, Type=Write, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-27 09:28:32, Type=Write, UID=1, Username=dench}, {AID=16, TargetTitle=测试计时器, Time=2020-07-27 09:26:23, Type=Write, UID=1, Username=dench}, {AID=15, TargetTitle=尝试发送成功之后的间隔跳转, Time=2020-07-27 09:25:28, Type=Write, UID=1, Username=dench}, {AID=10, TargetTitle=再再次测试$message, Time=2020-07-27 08:11:40, Type=Write, UID=1, Username=dench}, {AID=9, TargetTitle=再次测试发送信息, Time=2020-07-27 08:10:53, Type=Write, UID=1, Username=dench}, {AID=8, TargetTitle=测试message, Time=2020-07-27 08:09:35, Type=Write, UID=1, Username=dench}, {AID=2, TargetTitle=测试图片回显, Time=2020-07-26 23:42:40, Type=Write, UID=1, Username=dench}] 
+INFO 2020-07-29 09:25:25,628 blog.controller.ArticleController. sendArticleByAID 137 :Article get: Article [aid=18, title=再次进行尝试, NumRead=4] 
+INFO 2020-07-29 09:25:59,830 com.zaxxer.hikari.HikariDataSource. close 350 :HikariPool-1 - Shutdown initiated... 
+INFO 2020-07-29 09:25:59,834 com.zaxxer.hikari.HikariDataSource. close 352 :HikariPool-1 - Shutdown completed. 
+INFO 2020-07-29 09:25:59,964 blog.BlogApplication. main 15 :hahaha!!! 
+INFO 2020-07-29 09:25:59,964 blog.BlogApplication. main 16 :C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog 
+INFO 2020-07-29 09:26:00,002 blog.BlogApplication. logStarting 55 :Starting BlogApplication on DHZ-ThinkPad-X1-Extreme with PID 18912 (C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog\target\classes started by Dench in C:\Users\Dench\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE\blog) 
+DEBUG 2020-07-29 09:26:00,002 blog.BlogApplication. logStarting 56 :Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+INFO 2020-07-29 09:26:00,002 blog.BlogApplication. logStartupProfileInfo 651 :No active profile set, falling back to default profiles: default 
+INFO 2020-07-29 09:26:00,415 com.zaxxer.hikari.HikariDataSource. getConnection 110 :HikariPool-2 - Starting... 
+INFO 2020-07-29 09:26:00,418 com.zaxxer.hikari.HikariDataSource. getConnection 123 :HikariPool-2 - Start completed. 
+WARN 2020-07-29 09:26:00,448 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration. openEntityManagerInViewInterceptor 220 :spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+INFO 2020-07-29 09:26:01,256 blog.BlogApplication. logStarted 61 :Started BlogApplication in 1.278 seconds (JVM running for 93.999) 
+INFO 2020-07-29 09:26:01,820 blog.service.SocialManagement. getMovementList 135 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;关注了UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx; 
+INFO 2020-07-29 09:26:01,822 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=2, title=测试图片回显, NumRead=20] 
+INFO 2020-07-29 09:26:01,824 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=25, title=测试新发布的文章, NumRead=0] 
+INFO 2020-07-29 09:26:01,826 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=8, title=测试message, NumRead=0] 
+INFO 2020-07-29 09:26:01,827 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=9, title=再次测试发送信息, NumRead=0] 
+INFO 2020-07-29 09:26:01,829 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=10, title=再再次测试$message, NumRead=0] 
+INFO 2020-07-29 09:26:01,831 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=56] 
+INFO 2020-07-29 09:26:01,833 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=15, title=尝试发送成功之后的间隔跳转, NumRead=0] 
+INFO 2020-07-29 09:26:01,834 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=16, title=测试计时器, NumRead=0] 
+INFO 2020-07-29 09:26:01,836 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=18, title=再次进行尝试, NumRead=6] 
+INFO 2020-07-29 09:26:01,837 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=21, title=重新编译后尝试, NumRead=0] 
+INFO 2020-07-29 09:26:01,838 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=26, title=近期更新计划, NumRead=0] 
+INFO 2020-07-29 09:26:01,847 blog.service.SocialManagement. getMovementList 171 :最终的动态列表如下[{AID=18, TargetTitle=再次进行尝试, Time=2020-07-29 09:25:05, Type=Like, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-29 09:25:04, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-29 09:02:51, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-27 20:09:14, Type=Write, UID=1, Username=dench}, {AID=26, TargetTitle=近期更新计划, Time=2020-07-27 19:24:01, Type=Write, UID=1, Username=dench}, {AID=25, TargetTitle=测试新发布的文章, Time=2020-07-27 11:19:09, Type=Write, UID=1, Username=dench}, {AID=21, TargetTitle=重新编译后尝试, Time=2020-07-27 09:30:29, Type=Write, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-27 09:28:32, Type=Write, UID=1, Username=dench}, {AID=16, TargetTitle=测试计时器, Time=2020-07-27 09:26:23, Type=Write, UID=1, Username=dench}, {AID=15, TargetTitle=尝试发送成功之后的间隔跳转, Time=2020-07-27 09:25:28, Type=Write, UID=1, Username=dench}, {AID=10, TargetTitle=再再次测试$message, Time=2020-07-27 08:11:40, Type=Write, UID=1, Username=dench}, {AID=9, TargetTitle=再次测试发送信息, Time=2020-07-27 08:10:53, Type=Write, UID=1, Username=dench}, {AID=8, TargetTitle=测试message, Time=2020-07-27 08:09:35, Type=Write, UID=1, Username=dench}, {AID=2, TargetTitle=测试图片回显, Time=2020-07-26 23:42:40, Type=Write, UID=1, Username=dench}] 
+INFO 2020-07-29 09:26:11,106 blog.controller.ArticleController. sendArticleByAID 137 :Article get: Article [aid=18, title=再次进行尝试, NumRead=6] 
+INFO 2020-07-29 09:26:16,003 blog.service.SocialManagement. getMovementList 135 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;关注了UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx; 
+INFO 2020-07-29 09:26:16,005 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=2, title=测试图片回显, NumRead=20] 
+INFO 2020-07-29 09:26:16,006 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=25, title=测试新发布的文章, NumRead=0] 
+INFO 2020-07-29 09:26:16,007 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=8, title=测试message, NumRead=0] 
+INFO 2020-07-29 09:26:16,009 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=9, title=再次测试发送信息, NumRead=0] 
+INFO 2020-07-29 09:26:16,010 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=10, title=再再次测试$message, NumRead=0] 
+INFO 2020-07-29 09:26:16,011 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=56] 
+INFO 2020-07-29 09:26:16,012 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=15, title=尝试发送成功之后的间隔跳转, NumRead=0] 
+INFO 2020-07-29 09:26:16,013 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=16, title=测试计时器, NumRead=0] 
+INFO 2020-07-29 09:26:16,014 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=18, title=再次进行尝试, NumRead=8] 
+INFO 2020-07-29 09:26:16,015 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=21, title=重新编译后尝试, NumRead=0] 
+INFO 2020-07-29 09:26:16,017 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=26, title=近期更新计划, NumRead=0] 
+INFO 2020-07-29 09:26:16,021 blog.service.SocialManagement. getMovementList 171 :最终的动态列表如下[{AID=18, TargetTitle=再次进行尝试, Time=2020-07-29 09:25:05, Type=Like, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-29 09:25:04, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-29 09:02:51, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-27 20:09:14, Type=Write, UID=1, Username=dench}, {AID=26, TargetTitle=近期更新计划, Time=2020-07-27 19:24:01, Type=Write, UID=1, Username=dench}, {AID=25, TargetTitle=测试新发布的文章, Time=2020-07-27 11:19:09, Type=Write, UID=1, Username=dench}, {AID=21, TargetTitle=重新编译后尝试, Time=2020-07-27 09:30:29, Type=Write, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-27 09:28:32, Type=Write, UID=1, Username=dench}, {AID=16, TargetTitle=测试计时器, Time=2020-07-27 09:26:23, Type=Write, UID=1, Username=dench}, {AID=15, TargetTitle=尝试发送成功之后的间隔跳转, Time=2020-07-27 09:25:28, Type=Write, UID=1, Username=dench}, {AID=10, TargetTitle=再再次测试$message, Time=2020-07-27 08:11:40, Type=Write, UID=1, Username=dench}, {AID=9, TargetTitle=再次测试发送信息, Time=2020-07-27 08:10:53, Type=Write, UID=1, Username=dench}, {AID=8, TargetTitle=测试message, Time=2020-07-27 08:09:35, Type=Write, UID=1, Username=dench}, {AID=2, TargetTitle=测试图片回显, Time=2020-07-26 23:42:40, Type=Write, UID=1, Username=dench}] 
+INFO 2020-07-29 09:26:17,608 blog.service.SocialManagement. getMovementList 135 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;关注了UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx; 
+INFO 2020-07-29 09:26:17,609 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=2, title=测试图片回显, NumRead=20] 
+INFO 2020-07-29 09:26:17,611 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=25, title=测试新发布的文章, NumRead=0] 
+INFO 2020-07-29 09:26:17,612 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=8, title=测试message, NumRead=0] 
+INFO 2020-07-29 09:26:17,614 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=9, title=再次测试发送信息, NumRead=0] 
+INFO 2020-07-29 09:26:17,615 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=10, title=再再次测试$message, NumRead=0] 
+INFO 2020-07-29 09:26:17,616 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=56] 
+INFO 2020-07-29 09:26:17,617 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=15, title=尝试发送成功之后的间隔跳转, NumRead=0] 
+INFO 2020-07-29 09:26:17,618 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=16, title=测试计时器, NumRead=0] 
+INFO 2020-07-29 09:26:17,619 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=18, title=再次进行尝试, NumRead=8] 
+INFO 2020-07-29 09:26:17,620 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=21, title=重新编译后尝试, NumRead=0] 
+INFO 2020-07-29 09:26:17,621 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=26, title=近期更新计划, NumRead=0] 
+INFO 2020-07-29 09:26:17,625 blog.service.SocialManagement. getMovementList 171 :最终的动态列表如下[{AID=18, TargetTitle=再次进行尝试, Time=2020-07-29 09:25:05, Type=Like, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-29 09:25:04, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-29 09:02:51, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-27 20:09:14, Type=Write, UID=1, Username=dench}, {AID=26, TargetTitle=近期更新计划, Time=2020-07-27 19:24:01, Type=Write, UID=1, Username=dench}, {AID=25, TargetTitle=测试新发布的文章, Time=2020-07-27 11:19:09, Type=Write, UID=1, Username=dench}, {AID=21, TargetTitle=重新编译后尝试, Time=2020-07-27 09:30:29, Type=Write, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-27 09:28:32, Type=Write, UID=1, Username=dench}, {AID=16, TargetTitle=测试计时器, Time=2020-07-27 09:26:23, Type=Write, UID=1, Username=dench}, {AID=15, TargetTitle=尝试发送成功之后的间隔跳转, Time=2020-07-27 09:25:28, Type=Write, UID=1, Username=dench}, {AID=10, TargetTitle=再再次测试$message, Time=2020-07-27 08:11:40, Type=Write, UID=1, Username=dench}, {AID=9, TargetTitle=再次测试发送信息, Time=2020-07-27 08:10:53, Type=Write, UID=1, Username=dench}, {AID=8, TargetTitle=测试message, Time=2020-07-27 08:09:35, Type=Write, UID=1, Username=dench}, {AID=2, TargetTitle=测试图片回显, Time=2020-07-26 23:42:40, Type=Write, UID=1, Username=dench}] 
+INFO 2020-07-29 09:26:18,362 blog.service.SocialManagement. getMovementList 135 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;关注了UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx; 
+INFO 2020-07-29 09:26:18,364 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=2, title=测试图片回显, NumRead=20] 
+INFO 2020-07-29 09:26:18,365 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=25, title=测试新发布的文章, NumRead=0] 
+INFO 2020-07-29 09:26:18,366 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=8, title=测试message, NumRead=0] 
+INFO 2020-07-29 09:26:18,367 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=9, title=再次测试发送信息, NumRead=0] 
+INFO 2020-07-29 09:26:18,368 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=10, title=再再次测试$message, NumRead=0] 
+INFO 2020-07-29 09:26:18,369 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=56] 
+INFO 2020-07-29 09:26:18,370 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=15, title=尝试发送成功之后的间隔跳转, NumRead=0] 
+INFO 2020-07-29 09:26:18,371 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=16, title=测试计时器, NumRead=0] 
+INFO 2020-07-29 09:26:18,372 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=18, title=再次进行尝试, NumRead=8] 
+INFO 2020-07-29 09:26:18,373 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=21, title=重新编译后尝试, NumRead=0] 
+INFO 2020-07-29 09:26:18,374 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=26, title=近期更新计划, NumRead=0] 
+INFO 2020-07-29 09:26:18,378 blog.service.SocialManagement. getMovementList 171 :最终的动态列表如下[{AID=18, TargetTitle=再次进行尝试, Time=2020-07-29 09:25:05, Type=Like, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-29 09:25:04, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-29 09:02:51, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-27 20:09:14, Type=Write, UID=1, Username=dench}, {AID=26, TargetTitle=近期更新计划, Time=2020-07-27 19:24:01, Type=Write, UID=1, Username=dench}, {AID=25, TargetTitle=测试新发布的文章, Time=2020-07-27 11:19:09, Type=Write, UID=1, Username=dench}, {AID=21, TargetTitle=重新编译后尝试, Time=2020-07-27 09:30:29, Type=Write, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-27 09:28:32, Type=Write, UID=1, Username=dench}, {AID=16, TargetTitle=测试计时器, Time=2020-07-27 09:26:23, Type=Write, UID=1, Username=dench}, {AID=15, TargetTitle=尝试发送成功之后的间隔跳转, Time=2020-07-27 09:25:28, Type=Write, UID=1, Username=dench}, {AID=10, TargetTitle=再再次测试$message, Time=2020-07-27 08:11:40, Type=Write, UID=1, Username=dench}, {AID=9, TargetTitle=再次测试发送信息, Time=2020-07-27 08:10:53, Type=Write, UID=1, Username=dench}, {AID=8, TargetTitle=测试message, Time=2020-07-27 08:09:35, Type=Write, UID=1, Username=dench}, {AID=2, TargetTitle=测试图片回显, Time=2020-07-26 23:42:40, Type=Write, UID=1, Username=dench}] 
+INFO 2020-07-29 09:26:19,171 blog.service.SocialManagement. getMovementList 135 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;关注了UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx; 
+INFO 2020-07-29 09:26:19,173 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=2, title=测试图片回显, NumRead=20] 
+INFO 2020-07-29 09:26:19,174 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=25, title=测试新发布的文章, NumRead=0] 
+INFO 2020-07-29 09:26:19,175 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=8, title=测试message, NumRead=0] 
+INFO 2020-07-29 09:26:19,176 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=9, title=再次测试发送信息, NumRead=0] 
+INFO 2020-07-29 09:26:19,177 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=10, title=再再次测试$message, NumRead=0] 
+INFO 2020-07-29 09:26:19,178 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=56] 
+INFO 2020-07-29 09:26:19,179 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=15, title=尝试发送成功之后的间隔跳转, NumRead=0] 
+INFO 2020-07-29 09:26:19,180 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=16, title=测试计时器, NumRead=0] 
+INFO 2020-07-29 09:26:19,181 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=18, title=再次进行尝试, NumRead=8] 
+INFO 2020-07-29 09:26:19,182 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=21, title=重新编译后尝试, NumRead=0] 
+INFO 2020-07-29 09:26:19,183 blog.service.SocialManagement. getMovementList 146 :用户UID: 1|Username: dench|Email: denghanzhi85139@163.com|Password: qazwsx;撰写了：Article [aid=26, title=近期更新计划, NumRead=0] 
+INFO 2020-07-29 09:26:19,186 blog.service.SocialManagement. getMovementList 171 :最终的动态列表如下[{AID=18, TargetTitle=再次进行尝试, Time=2020-07-29 09:25:05, Type=Like, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-29 09:25:04, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-29 09:02:51, Type=Collect, UID=1, Username=dench}, {AID=11, TargetTitle=再再再次尝试发送文章提示信息, Time=2020-07-27 20:09:14, Type=Write, UID=1, Username=dench}, {AID=26, TargetTitle=近期更新计划, Time=2020-07-27 19:24:01, Type=Write, UID=1, Username=dench}, {AID=25, TargetTitle=测试新发布的文章, Time=2020-07-27 11:19:09, Type=Write, UID=1, Username=dench}, {AID=21, TargetTitle=重新编译后尝试, Time=2020-07-27 09:30:29, Type=Write, UID=1, Username=dench}, {AID=18, TargetTitle=再次进行尝试, Time=2020-07-27 09:28:32, Type=Write, UID=1, Username=dench}, {AID=16, TargetTitle=测试计时器, Time=2020-07-27 09:26:23, Type=Write, UID=1, Username=dench}, {AID=15, TargetTitle=尝试发送成功之后的间隔跳转, Time=2020-07-27 09:25:28, Type=Write, UID=1, Username=dench}, {AID=10, TargetTitle=再再次测试$message, Time=2020-07-27 08:11:40, Type=Write, UID=1, Username=dench}, {AID=9, TargetTitle=再次测试发送信息, Time=2020-07-27 08:10:53, Type=Write, UID=1, Username=dench}, {AID=8, TargetTitle=测试message, Time=2020-07-27 08:09:35, Type=Write, UID=1, Username=dench}, {AID=2, TargetTitle=测试图片回显, Time=2020-07-26 23:42:40, Type=Write, UID=1, Username=dench}] 
+INFO 2020-07-29 09:26:21,686 blog.controller.ArticleController. sendArticleByAID 137 :Article get: Article [aid=18, title=再次进行尝试, NumRead=8] 
+INFO 2020-07-29 09:27:06,161 blog.controller.ArticleController. sendArticleByAID 137 :Article get: Article [aid=11, title=再再再次尝试发送文章提示信息, NumRead=56] 

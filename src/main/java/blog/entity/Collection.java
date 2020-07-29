@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="collection")
+@Table(name="collections")
 public class Collection implements Serializable {
 
     //收藏记录的ID
